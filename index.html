@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Deadlock • Hero Roulette</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="shell">
+        <h1 class="headline">DEADLOCK <em>ROULETTE</em> <span class="by-kro">by kro</span></h1>
+        <div class="layout">
+            <section class="stage">
+                <div class="wheel-wrap"><canvas id="wheel" width="1200" height="1200" role="button" tabindex="0"
+                        aria-label="Click to spin the Deadlock hero selection wheel" title="Click to spin"></canvas>
+                    <div class="pointer"></div>
+                    <div class="hub"></div>
+                </div>
+                <div class="actions"><button class="primary" id="spin">SPIN THE WHEEL</button><button class="secondary"
+                        id="quick">INSTANT PICK</button></div>
+                <div class="result" id="result" aria-live="polite">Ready to spin <strong>Who will you play?</strong>
+                </div>
+            </section>
+            <aside class="side">
+                <section class="panel">
+                    <div class="row">
+                        <h2>HERO POOL</h2><span class="count" id="count">44 / 44</span>
+                    </div>
+                    <div class="muted">Uncheck anyone you don't want on the wheel. All 44 heroes included. Categories
+                        based on the reference chart; October 2026 additions are under New Heroes.</div>
+                    <div class="filters"><button class="chip on" data-role="All">All heroes</button><button class="chip"
+                            data-role="Carry">Carry</button><button class="chip" data-role="Tank">Tank</button><button
+                            class="chip" data-role="Support">Support</button><button class="chip"
+                            data-role="Assassin">Assassin</button><button class="chip" data-role="New Heroes">New
+                            Heroes</button></div><input class="search" id="search" placeholder="Search heroes..."
+                        aria-label="Search heroes">
+                    <div class="heroes" id="heroes"></div>
+                    <div class="row" style="margin-top:14px"><button class="smallbtn" id="selectAll">Select
+                            all</button><button class="smallbtn" id="clearAll">Clear all</button><button
+                            class="smallbtn" id="reset">Reset wheel</button></div>
+                </section>
+                <section class="panel">
+                    <h2>SPIN SETTINGS</h2><label class="option"><input type="checkbox" id="eliminate"> Remove the winner
+                        after each spin</label><label class="option"><input type="checkbox" id="sound" checked> Play
+                        tick sounds while spinning</label>
+                    <div class="muted">Spacebar also spins the wheel. Every selected hero has equal odds.</div>
+                </section>
+                <section class="panel">
+                    <div class="row">
+                        <h2>PREVIOUS PICKS</h2><button class="smallbtn" id="clearHistory">Clear</button>
+                    </div>
+                    <div class="history" id="history">No spins yet.</div>
+                </section>
+            </aside>
+        </div>
+        <div class="footer">Unofficial Deadlock fan-made roulette · Works entirely offline · Hero roster checked October
+            25, 2026</div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
